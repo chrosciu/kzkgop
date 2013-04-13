@@ -1,2 +1,6 @@
-<%= link_to stop.name, stop_path(id: stop.stop_id) %> <%= stop.time %>
-<br/>
+<dt>
+  <%= link_to stop.name, stop_path(id: stop.stop_id) %>
+</dt>
+<dd>
+  <%= stop.time %>
+</dd>
