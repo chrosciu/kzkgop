@@ -1,3 +1,4 @@
-<%= check_box_tag('scope_ids[]', scope.id) %>
-<%= scope.name %>
-<br/>
+<label class="checkbox">
+  <%= check_box_tag 'scope_ids[]', scope.id, true %>
+  <%= scope.name %>
+</label>

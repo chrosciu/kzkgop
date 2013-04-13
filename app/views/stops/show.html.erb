@@ -1,9 +1,12 @@
-<%= @stop.name %>
-<br/>
-<%= link_to 'Wszystkie kierunki', stop_departures_path(stop_id: @stop.id, direction_ids: @stop.directions.map(&:id)) %>
-<br/>
+<h4><%= @stop.name %></h4>
 <%= form_tag(stop_departures_path(stop_id: @stop.id), method: :get) do %>
-  <%= render partial: 'scope', collection: Scope.all %>
-  <%= render partial: 'direction', collection: @stop.directions %>
-  <%= submit_tag('Pokaz') %>
+  <fieldset class="fieldset">
+    <%= render partial: 'scope', collection: Scope.all %>
+  </fieldset>
+  <fieldset class="fieldset">
+    <%= render partial: 'direction', collection: @stop.directions %>
+  </fieldset>
+  <div class="form-actions">
+  <%= button_tag 'Pokaż', class: 'btn btn-primary btn-block' %>
+</div>
 <% end %>

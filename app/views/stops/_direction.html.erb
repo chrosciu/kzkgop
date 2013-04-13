@@ -1,3 +1,4 @@
-<%= check_box_tag('direction_ids[]', direction.id) %>
-<%= link_to "#{direction.route} #{direction.name}", stop_departures_path(stop_id: @stop.id, direction_ids: [direction.id]) %>
-<br/>
+<label class="checkbox">
+  <%= check_box_tag('direction_ids[]', direction.id) %>
+  <%= direction.route %> <%= direction.name %>
+</label>
