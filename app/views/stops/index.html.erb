@@ -1,6 +1,6 @@
 <h3>Wyszukiwarka odjazdów KZK GOP</h3>
 <%= form_tag stops_path, method: 'get', class: 'form-search' do %>
-  <%= text_field_tag :query, nil, class: 'search-query input-medium', placeholder: 'Nazwa przystanku' %>
+  <%= text_field_tag :query, params[:query], class: 'search-query input-medium', placeholder: 'Nazwa przystanku' %>
   <%= button_tag 'Szukaj', class: 'btn btn-primary' %>
 <% end %>
 <ul class="unstyled">
