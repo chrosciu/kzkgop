@@ -1,8 +1,6 @@
-<%= direction.route %> <%= direction.name %>
-<br/>
+<h4><%= direction.route %> <%= direction.name %></h4>
 <% scoped_departures.each do |scope, departures| %>
   <% if departures.present? %>
     <%= render partial: 'scope', locals: { scope: scope, departures: departures } %>
   <% end %>
 <% end %>
-<br/>
