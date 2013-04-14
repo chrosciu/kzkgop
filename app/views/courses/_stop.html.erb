@@ -1,6 +1,4 @@
-<dt>
-  <%= link_to stop.name, stop_path(id: stop.stop_id) %>
-</dt>
-<dd>
-  <%= stop.time %>
-</dd>
+<tr>
+  <td><%= link_to stop.name, stop_path(id: stop.stop_id), class: 'btn' %></td>
+  <td><%= stop.time %></td>
+</tr>
