@@ -1,4 +1,4 @@
 <label class="checkbox">
-  <%= check_box_tag('direction_ids[]', direction.id) %>
+  <%= check_box_tag('direction_ids[]', direction.id, false, class: 'direction_checkbox') %>
   <%= direction.route %> <%= direction.name %>
 </label>
