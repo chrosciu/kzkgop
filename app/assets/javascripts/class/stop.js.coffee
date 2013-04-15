@@ -1,23 +1,31 @@
 class Stop
 
   constructor: ->
-    @observeReverseButton()
+    @observeReverseButtons()
 
-  observeReverseButton: ->
+  observeReverseButtons: ->
     $('button.reverse_button').on 'click', @reverseButtonClicked
 
   reverseButtonClicked: (e) =>
     e.preventDefault()
     e.stopPropagation()
-    @reverseDirections()
+    @reverseCheckboxesInButtonFieldset(e.currentTarget)
 
-  reverseDirections: ->
-    @reverseDirection(direction) for direction in $('input.direction_checkbox')
+  reverseCheckboxesInButtonFieldset: (button) ->
+    $fieldset = @buttonFieldset(button)
+    $checkboxes = @fieldsetCheckboxes($fieldset)
+    @reverseCheckbox(checkbox) for checkbox in $checkboxes
 
-  reverseDirection: (direction) ->
-    $(direction).prop('checked', !@isChecked(direction))
+  buttonFieldset: (button) ->
+    $(button).parents('fieldset')
 
-  isChecked: (direction) ->
-    $(direction).prop('checked')
+  fieldsetCheckboxes: ($fieldset) ->
+    $fieldset.find("input[type='checkbox']")
+
+  reverseCheckbox: (checkbox) ->
+    $(checkbox).prop('checked', !@isChecked(checkbox))
+
+  isChecked: (checkbox) ->
+    $(checkbox).prop('checked')
 
 $ -> new Stop

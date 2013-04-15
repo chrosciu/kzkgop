@@ -2,6 +2,7 @@
 <%= form_tag(stop_departures_path(stop_id: @stop.id), method: :get) do %>
   <fieldset class="fieldset">
     <%= render partial: 'scope', collection: Scope.all %>
+    <%= button_tag 'Odwróć', class: 'btn btn-block reverse_button' %>
   </fieldset>
   <fieldset class="fieldset">
     <%= render partial: 'direction', collection: @stop.directions %>
